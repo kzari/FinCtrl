@@ -1,0 +1,16 @@
+﻿@model Kzari.FinCtrl.Web.ViewModels.CategoriaViewModel
+
+@{
+    ViewBag.Title = "Cadastrar Categoria";
+    Layout = "_Layout";
+}
+
+<h2>Cadastrar Categoria</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="">
+        @Html.LabelFor(a => a.Nome)
+        @Html.EditorFor(a => a.Nome)
+    </div>
+}

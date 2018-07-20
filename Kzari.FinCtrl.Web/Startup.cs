@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Kzari.Finctrl.Domain.Services;
+using Kzari.Finctrl.Domain.Services.Interfaces;
+using Kzari.FinCtrl.Domain.Interfaces;
+using Kzari.FinCtrl.Infra.Data.Repository;
+using Kzari.FinCtrl.Infra.Data;
 
 namespace Kzari.FinCtrl.Web
 {
@@ -22,6 +23,14 @@ namespace Kzari.FinCtrl.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            //Serviços
+            services.AddTransient<ICategoriaService, CategoriaService>();
+
+            //Repositórios
+            services.AddTransient<ICategoriaRepository, CategoriaRepository>();
+
+            services.AddScoped<FinCtrlContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
