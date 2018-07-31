@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using Kzari.FinCtrl.Domain;
+using Kzari.Finctrl.Domain.Entities;
 using Kzari.FinCtrl.Infra.Data;
 
 namespace Kzari.FinCtrl.Seeder

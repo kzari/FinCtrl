@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Kzari.Finctrl.Domain.Repositories;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -26,9 +27,11 @@ namespace Kzari.FinCtrl.Web
 
             //Serviços
             services.AddTransient<ICategoriaService, CategoriaService>();
+            services.AddTransient<IRegistroService, RegistroService>();
 
             //Repositórios
             services.AddTransient<ICategoriaRepository, CategoriaRepository>();
+            services.AddTransient<IRegistroRepository, RegistroRepository>();
 
             services.AddScoped<FinCtrlContext>();
         }
@@ -53,6 +56,8 @@ namespace Kzari.FinCtrl.Web
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            app.UseRequestLocalization("pt-br");
         }
     }
 }

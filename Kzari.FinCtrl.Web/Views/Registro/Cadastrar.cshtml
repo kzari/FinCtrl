@@ -1,0 +1,42 @@
+﻿@model Kzari.FinCtrl.Web.ViewModels.CadastrarRegistroViewModel
+
+@{
+    ViewBag.Title = "Inserir Registro";
+    Layout = "_Layout";
+}
+
+<h2>Inserir Registro</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+    <div class="form-group">
+        @Html.LabelFor(m => m.Data)
+        @Html.TextBoxFor(m => m.Data, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m=> m.Data)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Descricao)
+        @Html.TextBoxFor(m => m.Descricao, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Descricao)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.DescricaoBanco)
+        @Html.TextBoxFor(m => m.DescricaoBanco, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.DescricaoBanco)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Valor)
+        @Html.TextBoxFor(m => m.Valor, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Valor)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.CategoriaId)
+        @Html.DropDownListFor(m=> m.CategoriaId, Model.Categorias, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.CategoriaId)
+    </div>
+
+    <button type="submit" class="btn btn-outline-primary float-right">
+        Gravar
+    </button>
+}

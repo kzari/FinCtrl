@@ -1,4 +1,5 @@
 ﻿using System;
+using Kzari.Finctrl.Domain.Entities;
 using Kzari.FinCtrl.Domain;
 using Microsoft.EntityFrameworkCore;
 

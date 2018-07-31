@@ -1,6 +1,6 @@
 using Kzari.FinCtrl.Shared;
 
-namespace Kzari.FinCtrl.Domain
+namespace Kzari.Finctrl.Domain.Entities
 {
     public class Categoria : Entity
     {

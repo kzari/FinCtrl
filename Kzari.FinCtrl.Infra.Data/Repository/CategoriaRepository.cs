@@ -1,4 +1,5 @@
 using System.Linq;
+using Kzari.Finctrl.Domain.Entities;
 using Kzari.FinCtrl.Domain;
 using Kzari.FinCtrl.Domain.Interfaces;
 

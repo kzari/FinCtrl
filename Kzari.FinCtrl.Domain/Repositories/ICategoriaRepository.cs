@@ -1,3 +1,5 @@
+using Kzari.Finctrl.Domain.Entities;
+
 namespace Kzari.FinCtrl.Domain.Interfaces
 {
     public interface ICategoriaRepository : IRepository<Categoria>
